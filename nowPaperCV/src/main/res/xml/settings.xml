@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+             
+        <ListPreference
+                android:key="location_preference"
+                android:title="@string/location"
+                android:summary="@string/location_summary"
+                android:entries="@array/locations"
+                android:entryValues="@array/locationValues"
+                android:defaultValue="Canyon"
+                android:dialogTitle="@string/location"
+                />
+        
+		<CheckBoxPreference
+                android:key="network_preference"
+                android:defaultValue="false"
+                android:title="@string/download_on_wifi"
+				android:summaryOff="@string/download_on_wifi_off"
+				android:summaryOn="@string/download_on_wifi_on"/>
+		
+		<CheckBoxPreference
+                android:key="random_preference"
+                android:defaultValue="false"
+                android:title="@string/random"
+				android:summaryOff="@string/random_off"
+				android:summaryOn="@string/random_on"
+				android:enabled="true"/>
+		
+		<CheckBoxPreference
+                android:key="fourk_preference"
+                android:defaultValue="false"
+                android:title="@string/fourk"
+				android:summaryOff="@string/fourk_off"
+				android:summaryOn="@string/fourk_on"
+				android:enabled="true"/>
+		
+<!-- 		<Preference -->
+<!--     			android:title="Adjust Blur and Dimming" -->
+<!--     			android:summary="Change how much of each effect you want"> -->
+<!-- 			<intent  -->
+<!-- 	        	android:action="android.intent.action.VIEW" -->
+<!-- 	        	android:targetPackage="net.nurik.roman.muzei" -->
+<!-- 	        	android:targetClass="com.google.android.apps.muzei.settings.SettingsActivity"/> -->
+<!-- 		</Preference> -->
+		
+</PreferenceScreen>

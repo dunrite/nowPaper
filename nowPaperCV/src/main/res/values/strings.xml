@@ -1,0 +1,120 @@
+<!--
+  Copyright 2013 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<resources>
+    <string name="app_name">nowPaper</string>
+    <string name="app_desc">Google Now Inspired Wallpapers</string>
+    <string name="welcome">Welcome             </string> <!-- Keep spaces at the end for now -->
+    <string name="about">About                 </string> <!-- Keep spaces at the end for now -->
+    <string name="swipe">Swipe from left to right to open the wallpaper menu.</string>
+    <string name="design">All wallpapers were designed by the talented Alex Pasquarella.</string>
+    <string name="muzei_enable">Click here to enable the Muzei Extension. This allows automatic time-cycling.</string>
+    <string name="muzei_install">In order to get time-cycling, you need Muzei. Click here to install it!</string>
+    <string name="welcomecard">nowPaper allows you to apply wallpapers inspired by Google Now straight to your device\'s homescreen.</string>
+    <string name="tap">TAP to apply image as wallpaper \nor \nHOLD to download image.</string>
+    <string name="jaxon">Developed by\nJaxon Wright\nwww.jaxonwright.com</string>
+    <string name="alex">Wallpapers by\nAlex Pasquarella\nwww.alexpasquarella.com</string>
+    <string name="disclaimer">These wallpaper designs are not permitted for commercial use without licensing agreement.</string>
+    <string-array name="colors_array">        
+        <item>Home</item>
+        <item>New York</item>
+        <item>Chicago</item>
+        <item>Portland</item>
+        <item>Austin</item>
+        <item>San Francisco</item>
+        <item>San Diego</item>
+        <item>Rochester</item>
+        <item>Toronto</item>
+        <item>Winter Lake</item>
+        <item>Conesus</item>
+        <item>Tahoe</item>
+        <item>Canyon</item>
+        <item>Rocky Mountains</item>
+        <item>Great Plains</item>
+        <item>Wind Farm</item>
+    </string-array>
+    <string-array name="color_icons">        
+        <item>home</item>
+        <item>newyork</item>
+        <item>chicago</item>
+        <item>portland</item>
+        <item>austin</item>
+        <item>sanfrancisco</item>
+        <item>sandiego</item>
+        <item>rochester</item>
+        <item>toronto</item>
+        <item>winterlake</item>
+        <item>conesus</item>
+        <item>tahoe</item>
+        <item>canyon</item>
+        <item>rockymountains</item>
+        <item>greatplains</item>
+        <item>cwf</item>
+    </string-array>
+    
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_about">About</string>
+    <string name="muzei_settings">"Muzei Settings"</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    
+    <string name="location">Location</string>
+    <string name="location_summary">Select which location to use</string>
+    <string name="download_on_wifi">Wifi Only</string>
+    <string name="download_on_wifi_on">Wallpapers will only be updated when on Wifi</string>
+    <string name="download_on_wifi_off">Wallpapers will be updated on both Wifi and Mobile data</string>
+    <string name="random">Random Location</string>
+    <string name="random_off">Will keep same location each day</string>
+    <string name="random_on">Will rotate locations randomly each day</string>
+    <string name="fourk">4K Wallpapers [for select locations]</string>
+    <string name="fourk_off">Will only use 1080p images</string>
+    <string name="fourk_on">Will use 4K images [Recommended only if you have a QHD display]</string>
+       
+    <string-array name="locations">
+        <item name="Austin">Austin</item>
+        <item name="Canyon">Canyon</item>
+        <item name="Chicago">Chicago</item>        
+        <item name="Conesus">Conesus</item>
+        <item name="Greatplains">Great Plains</item>
+        <item name="Newyork">New York</item>
+        <item name="Portland">Portland</item>
+        <item name="Rochester">Rochester</item>
+        <item name="Rockys">Rocky Mountains</item>
+        <item name="Sandiego">San Diego</item>
+        <item name="Sanfrancisco">San Francisco</item>
+        <item name="Tahoe">Tahoe</item>
+        <item name="Toronto">Toronto</item> 
+        <item name="Windfarm">Wind Farm</item>
+        <item name="Winterlake">Winter Lake</item>
+    </string-array>
+    <string-array name="locationValues">
+        <item name="Austin">Austin</item>
+        <item name="Canyon">Canyon</item>
+        <item name="Chicago">Chicago</item> 
+        <item name="Conesus">Conesus</item>
+        <item name="Greatplains">Great Plains</item>
+        <item name="Newyork">New York</item>
+        <item name="Portland">Portland</item>
+        <item name="Rochester">Rochester</item>
+        <item name="Rockys">Rocky Mountains</item>
+        <item name="Sandiego">San Diego</item>
+        <item name="Sanfrancisco">San Francisco</item>
+        <item name="Tahoe">Tahoe</item>
+        <item name="Toronto">Toronto</item>
+        <item name="Windfarm">Wind Farm</item>
+        <item name="Winterlake">Winter Lake</item>
+    </string-array>
+</resources>

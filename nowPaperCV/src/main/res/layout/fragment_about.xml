@@ -1,0 +1,135 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">  
+   <RelativeLayout
+    	android:layout_width="wrap_content"
+    	android:layout_height="100dp"
+    	android:fitsSystemWindows="false">
+    <ImageView
+    	android:id="@+id/aboutbanner"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/welcomebanner"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/abouttxt"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/about" 
+	    android:textSize="50sp"
+	    android:textColor="#FFF"
+	    android:layout_alignBottom="@id/aboutbanner"
+	    android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_5"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:clickable="false"
+        card_view:contentPadding="5dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="3dp">
+        <ImageView
+            android:id="@+id/exc"
+            android:layout_height="wrap_content"
+            android:layout_width="55dp"
+            android:src="@drawable/exc"
+            android:layout_gravity="left"/>
+        <TextView
+	       android:id="@+id/disclaimer"
+	       android:paddingLeft="60dp"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:text="@string/disclaimer" 
+	       android:textSize="18sp"/>
+    </android.support.v7.widget.CardView>
+    
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_6"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:clickable="false"
+        card_view:contentPadding="5dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="3dp">
+        
+        <ImageView
+            android:id="@+id/aleximg"
+            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:src="@drawable/alex"
+            android:layout_gravity="left"/>
+        <TextView
+	       android:id="@+id/alexdsc"
+	       android:paddingLeft="60dp"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:text="@string/alex" 
+	       android:textSize="18sp"/>
+        
+    </android.support.v7.widget.CardView>
+    
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_7"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:clickable="false"
+        card_view:contentPadding="5dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="3dp">
+        <ImageView
+            android:id="@+id/jaxonimg"
+            android:layout_height="wrap_content"
+            android:layout_width="60dp"
+            android:src="@drawable/jaxon"
+            android:layout_gravity="left"/>
+        <TextView
+	       android:id="@+id/jaxondsc"
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"
+	       android:text="@string/jaxon" 
+	       android:textSize="18sp"
+	       android:paddingLeft="60dp"/>
+    </android.support.v7.widget.CardView>
+    
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_8"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:clickable="false"
+        card_view:contentPadding="5dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="3dp">
+        
+        <ImageView
+            android:id="@+id/dunrite_icon"
+            android:layout_height="75dp"
+            android:layout_width="wrap_content"
+            android:src="@drawable/dunriteicon"
+            android:layout_gravity="center"/>
+        
+    </android.support.v7.widget.CardView>
+    
+</LinearLayout>
+</ScrollView>
