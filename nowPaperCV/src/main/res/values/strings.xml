@@ -17,8 +17,8 @@
 <resources>
     <string name="app_name">nowPaper</string>
     <string name="app_desc">Google Now Inspired Wallpapers</string>
-    <string name="welcome">Welcome             </string> <!-- Keep spaces at the end for now -->
-    <string name="about">About                 </string> <!-- Keep spaces at the end for now -->
+    <string name="welcome">Welcome</string> <!-- Keep spaces at the end for now -->
+    <string name="about">About</string> <!-- Keep spaces at the end for now -->
     <string name="swipe">Swipe from left to right to open the wallpaper menu.</string>
     <string name="design">All wallpapers were designed by the talented Alex Pasquarella.</string>
     <string name="muzei_enable">Click here to enable the Muzei Extension. This allows automatic time-cycling.</string>

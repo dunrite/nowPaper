@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="custom" parent="Theme.AppCompat.Light">
-		<item name="colorPrimary">#FFFFFF</item>
-    	<item name="colorPrimaryDark">#DDDDDD</item>
-    	<item name="colorAccent">#2380FF</item>
+		<item name="colorPrimary">#FFF</item>
+    	<item name="colorPrimaryDark">#8cced7</item>
+    	<item name="colorAccent">#4e679a</item>
     	<item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
 	</style>
 	<style name="RobotoTextViewStyle" parent="android:Widget.TextView">

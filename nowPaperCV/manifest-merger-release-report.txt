@@ -1,0 +1,140 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:17:1
+	xmlns:android
+		ADDED from AndroidManifest.xml:17:11
+	package
+		ADDED from AndroidManifest.xml:18:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		ADDED from AndroidManifest.xml:20:5
+	android:versionCode
+		ADDED from AndroidManifest.xml:19:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-sdk
+ADDED from AndroidManifest.xml:22:5
+MERGED from com.android.support:cardview-v7:21.0.3:15:5
+MERGED from com.android.support:recyclerview-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:appcompat-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.melnykov:floatingactionbutton:1.1.0:8:5
+MERGED from com.android.support:recyclerview-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
+	android:targetSdkVersion
+		ADDED from AndroidManifest.xml:22:42
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		ADDED from AndroidManifest.xml:22:15
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:23:2
+	android:name
+		ADDED from AndroidManifest.xml:23:19
+uses-permission#android.permission.SET_WALLPAPER
+ADDED from AndroidManifest.xml:24:2
+	android:name
+		ADDED from AndroidManifest.xml:24:19
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from AndroidManifest.xml:25:2
+	android:name
+		ADDED from AndroidManifest.xml:25:19
+uses-permission#android.permission.WAKE_LOCK
+ADDED from AndroidManifest.xml:26:3
+	android:name
+		ADDED from AndroidManifest.xml:26:20
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:27:3
+	android:name
+		ADDED from AndroidManifest.xml:27:20
+application
+ADDED from AndroidManifest.xml:29:5
+MERGED from com.android.support:cardview-v7:21.0.3:16:5
+MERGED from com.android.support:recyclerview-v7:21.0.3:17:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:appcompat-v7:21.0.3:16:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.melnykov:floatingactionbutton:1.1.0:12:5
+MERGED from com.android.support:recyclerview-v7:21.0.3:17:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
+	android:label
+		ADDED from AndroidManifest.xml:31:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:30:9
+	android:icon
+		ADDED from AndroidManifest.xml:32:9
+	android:theme
+		ADDED from AndroidManifest.xml:34:9
+	android:hardwareAccelerated
+		ADDED from AndroidManifest.xml:36:9
+	android:background
+		ADDED from AndroidManifest.xml:35:9
+	android:logo
+		ADDED from AndroidManifest.xml:33:9
+activity#com.dunrite.now.MainActivity
+ADDED from AndroidManifest.xml:37:9
+	android:name
+		ADDED from AndroidManifest.xml:38:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:39:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:40:17
+	android:name
+		ADDED from AndroidManifest.xml:40:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:41:17
+	android:name
+		ADDED from AndroidManifest.xml:41:27
+service#com.dunrite.now.ArtSource
+ADDED from AndroidManifest.xml:45:9
+	android:label
+		ADDED from AndroidManifest.xml:47:8
+	android:icon
+		ADDED from AndroidManifest.xml:46:8
+	android:description
+		ADDED from AndroidManifest.xml:48:8
+	android:name
+		ADDED from AndroidManifest.xml:45:18
+intent-filter#com.google.android.apps.muzei.api.MuzeiArtSource
+ADDED from AndroidManifest.xml:49:8
+action#com.google.android.apps.muzei.api.MuzeiArtSource
+ADDED from AndroidManifest.xml:50:12
+	android:name
+		ADDED from AndroidManifest.xml:50:20
+meta-data#color
+ADDED from AndroidManifest.xml:52:8
+	android:name
+		ADDED from AndroidManifest.xml:52:19
+	android:value
+		ADDED from AndroidManifest.xml:52:40
+meta-data#settingsActivity
+ADDED from AndroidManifest.xml:53:8
+	android:name
+		ADDED from AndroidManifest.xml:53:19
+	android:value
+		ADDED from AndroidManifest.xml:54:10
+activity#com.dunrite.now.SettingsActivity
+ADDED from AndroidManifest.xml:57:9
+	android:label
+		ADDED from AndroidManifest.xml:60:8
+	android:theme
+		ADDED from AndroidManifest.xml:58:14
+	android:exported
+		ADDED from AndroidManifest.xml:61:8
+	android:name
+		ADDED from AndroidManifest.xml:57:19
+	android:logo
+		ADDED from AndroidManifest.xml:59:14
+activity#android.support.v7.widget.TestActivity
+ADDED from com.android.support:recyclerview-v7:21.0.3:18:9
+MERGED from com.android.support:recyclerview-v7:21.0.3:18:9
+	android:label
+		ADDED from com.android.support:recyclerview-v7:21.0.3:18:19
+	android:name
+		ADDED from com.android.support:recyclerview-v7:21.0.3:18:60

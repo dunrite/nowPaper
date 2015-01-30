@@ -32,7 +32,7 @@
         android:icon="@drawable/ic_launcher"
         android:logo="@drawable/ablogo"
         android:theme="@style/custom"
-        android:background="#FFFFFF"
+        android:background="#FFF"
         android:hardwareAccelerated="true">
         <activity
             android:name="com.dunrite.now.MainActivity">
@@ -49,13 +49,14 @@
 		     <intent-filter>
 		         <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
 		     </intent-filter>
-		     <meta-data android:name="color" android:value="#FFFFFF" />
+		     <meta-data android:name="color" android:value="#FFF" />
 		     <meta-data android:name="settingsActivity"
          android:value=".SettingsActivity" />
         </service>
         
         <activity android:name=".SettingsActivity"
-             android:theme="@android:style/Theme.Holo.Light"
+             android:theme="@style/custom"
+             android:logo="@drawable/ablogo"
 		     android:label="@string/app_name"
 		     android:exported="true" />
         

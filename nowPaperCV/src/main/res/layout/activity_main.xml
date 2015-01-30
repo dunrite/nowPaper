@@ -44,8 +44,6 @@
         android:layout_gravity="start"
         android:divider="#E6E6E6"
         android:dividerHeight="3dp"
-        android:background="#E6E6E6"
-        android:paddingTop="20dp"
-        android:paddingBottom="50dp"
+        android:background="#FFF"
         android:clipToPadding="false"/>
 </android.support.v4.widget.DrawerLayout>

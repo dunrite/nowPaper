@@ -15,12 +15,12 @@
  */
 
 package com.dunrite.now;
+import android.app.Activity;
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -35,8 +35,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -46,6 +44,7 @@ import android.widget.Toast;
 import com.dunrite.now.R;
 import com.google.android.apps.muzei.api.MuzeiArtSource;
 import com.google.android.apps.muzei.api.internal.ProtocolConstants;
+import com.melnykov.fab.FloatingActionButton;
 
 public class MainActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
@@ -53,8 +52,6 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String[] mColorIcons;
     private ArrayAdapter<String> adapter;
-    private static SystemBarTintManager tintManager;
-    private static boolean inLoc = false;
     
 	@Override
 	public void onBackPressed() {
@@ -64,39 +61,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); //Forces portrait orientation
         setContentView(R.layout.activity_main);
-        
-    
-        if (android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.KITKAT) {  //set transparency if has kitkat
-        	//----KITKAT TRANSPARENCY STUFF----------------------------------
-            Window w = getWindow(); // in Activity's onCreate() for instance
-           
-            w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, //Set the Nav Bar to translucent
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-            w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,      //Set the Status Bar to translucent
-                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            //----COLOR TINTING STUFF----------------------------------------
-               // create our manager instance after the content view is set
-               tintManager = new SystemBarTintManager(this);
-               // enable status bar tint
-               tintManager.setStatusBarTintEnabled(true);
-               // enable navigation bar tint
-               tintManager.setNavigationBarTintEnabled(false);
-               tintManager.setTintColor(Color.parseColor("#FFFFFF"));
-               SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
-               findViewById(android.R.id.content).setPadding(0, config.getPixelInsetTop(true),0,0);
-        }
-        if (android.os.Build.VERSION.SDK_INT == android.os.Build.VERSION_CODES.LOLLIPOP){
-	        Window w = getWindow(); // in Activity's onCreate() for instance
-	        
-	        w.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, //Set the Nav Bar to translucent
-	        		WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-	        tintManager = new SystemBarTintManager(this);
-	        SystemBarTintManager.SystemBarConfig config = tintManager.getConfig();
-            findViewById(android.R.id.content).setPadding(0, config.getPixelInsetTop(true),0,0);
-        }
+
         mColorIcons = getResources().getStringArray(R.array.color_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -114,9 +80,6 @@ public class MainActivity extends ActionBarActivity {
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        getSupportActionBar().setHomeButtonEnabled(true);
        getSupportActionBar().setDisplayShowHomeEnabled(true);
-       getSupportActionBar().setDisplayUseLogoEnabled(true);
-        //set color of action bar
-       getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFFFFF")));
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
@@ -159,12 +122,6 @@ public class MainActivity extends ActionBarActivity {
         // If the nav drawer is open, hide action items related to the content view
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
         menu.findItem(R.id.action_about).setVisible(!drawerOpen);
-        menu.findItem(R.id.muzei_settings).setVisible(!drawerOpen);
-        if(!inLoc || !((MainActivity) this).isAppInstalled("net.nurik.roman.muzei"))
-        	menu.findItem(R.id.muzei_apply).setVisible(false);
-        else
-        	menu.findItem(R.id.muzei_apply).setVisible(!drawerOpen);
-        
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -179,27 +136,13 @@ public class MainActivity extends ActionBarActivity {
         // Handle action buttons
         switch(item.getItemId()) {
         case R.id.action_about:
-        	inLoc=false;
+            getSupportActionBar().setTitle("nowPaper");
         	supportInvalidateOptionsMenu();
         	selectItem(-1);
         	return true;
         case R.id.muzei_settings:
         	Intent intent = new Intent(this, SettingsActivity.class);
         	startActivity(intent);
-        	return true;
-        case R.id.muzei_apply:
-        
-        	if(((String)getSupportActionBar().getTitle()).toLowerCase().equals("rockys")){
-        		Utils.setLocation(this, "Rocky Mountains");
-        	}
-        	else{
-        		Utils.setLocation(this, capitalizeString(((String)getSupportActionBar().getTitle()).toLowerCase()));
-        	}
-        	Intent updateIntent = new Intent(this, ArtSource.class);
-	        updateIntent.setAction(ProtocolConstants.ACTION_HANDLE_COMMAND);
-	        updateIntent.putExtra(ProtocolConstants.EXTRA_COMMAND_ID, MuzeiArtSource.BUILTIN_COMMAND_ID_NEXT_ARTWORK);
-	        startService(updateIntent);
-	        Toast.makeText(getApplicationContext(), "Location Applied in Muzei", Toast.LENGTH_LONG).show();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -273,7 +216,20 @@ public class MainActivity extends ActionBarActivity {
         }
         return installed;
     }
-     
+
+    public void setInMuzei(){
+        if(((String)getSupportActionBar().getTitle()).toLowerCase().equals("rockys")){
+            Utils.setLocation(getApplicationContext(), "Rocky Mountains");
+        }
+        else{
+            Utils.setLocation(this, capitalizeString(((String)getSupportActionBar().getTitle()).toLowerCase()));
+        }
+        Intent updateIntent = new Intent(this, ArtSource.class);
+        updateIntent.setAction(ProtocolConstants.ACTION_HANDLE_COMMAND);
+        updateIntent.putExtra(ProtocolConstants.EXTRA_COMMAND_ID, MuzeiArtSource.BUILTIN_COMMAND_ID_NEXT_ARTWORK);
+        startService(updateIntent);
+        Toast.makeText(getApplicationContext(), "Location Applied in Muzei", Toast.LENGTH_LONG).show();
+    }
     /**
      * Fragment that appears in the "content_frame", shows wallpapers
      */
@@ -301,16 +257,16 @@ public class MainActivity extends ActionBarActivity {
             String color = getResources().getStringArray(R.array.colors_array)[i];
             String colorNS = color.replaceAll("\\s","");
         	if(!color.equals("Home") ){
-        		inLoc=true;
 	            rootView = inflater.inflate(R.layout.fragment_color, container, false);
 	            
 	            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
-	
 	            mRecyclerView.setHasFixedSize(true);
 	            
 	            // use a linear layout manager
 	            mLayoutManager = new LinearLayoutManager(this.getActivity());
 	            mRecyclerView.setLayoutManager(mLayoutManager);
+                FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+                fab.attachToRecyclerView(mRecyclerView);
 	           
 	            String[] myDataset = {(colorNS + "/JPEG/dawn.jpg"), 
 	            		(colorNS + "/JPEG/day.jpg"), 
@@ -321,8 +277,17 @@ public class MainActivity extends ActionBarActivity {
 	            mAdapter = new RecAdapter(getActivity(), myDataset);
 	            mRecyclerView.setAdapter(mAdapter);
 	            ((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(color.toUpperCase());
+
+                View.OnClickListener fabListen = new View.OnClickListener() {
+                    Activity c = getActivity();
+                    @Override
+                    public void onClick(View v) {
+                        ((MainActivity)c).setInMuzei();
+                    }
+                };
+                fab.setOnClickListener(fabListen);
             }else{
-            	inLoc=false;
+                ((MainActivity)getActivity()).getSupportActionBar().setTitle("nowPaper");
             	rootView = inflater.inflate(R.layout.fragment_home, container, false);
             	if(((MainActivity)getActivity()).isAppInstalled("net.nurik.roman.muzei")){
             		

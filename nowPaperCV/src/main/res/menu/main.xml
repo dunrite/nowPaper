@@ -30,12 +30,4 @@
         android:id="@+id/muzei_settings"
         android:orderInCategory="200"
         android:title="@string/muzei_settings"/>
-	
-	<item
-	    nowpaper:showAsAction="always"
-        android:id="@+id/muzei_apply"
-        android:orderInCategory="300"
-        android:title="APPLY IN MUZEI"
-        android:icon="@drawable/muzeiapply"/>
-
 </menu>
