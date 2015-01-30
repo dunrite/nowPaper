@@ -88,13 +88,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1868" max-vertical-offset="5202">
-              <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.63271606" vertical-offset="4503" max-vertical-offset="5253">
+              <caret line="289" column="69" selection-start-line="289" selection-start-column="69" selection-end-line="289" selection-end-column="69" />
               <folding>
-                <element signature="e#0#11787#0" expanded="true" />
+                <element signature="e#0#11949#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#2040#2041#0" expanded="true" />
                 <element signature="e#2071#2072#0" expanded="true" />
@@ -158,10 +158,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SettingsActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/SettingsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6296296" vertical-offset="0" max-vertical-offset="1156">
+            <state vertical-scroll-proportion="0.0" vertical-offset="508" max-vertical-offset="1156">
               <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -794,8 +794,8 @@
         <option value="$PROJECT_DIR$/nowPaperCV/src/main/res/layout/fragment_color.xml" />
         <option value="$PROJECT_DIR$/nowPaperCV/src/main/res/layout/fragment_about.xml" />
         <option value="$PROJECT_DIR$/nowPaperCV/src/main/res/layout/fragment_home.xml" />
-        <option value="$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/MainActivity.java" />
         <option value="$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/SettingsActivity.java" />
+        <option value="$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -1114,7 +1114,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1436,12 +1436,22 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="508" max-vertical-offset="1156">
+          <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1868" max-vertical-offset="5202">
-          <caret line="138" column="12" selection-start-line="138" selection-start-column="12" selection-end-line="138" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.63271606" vertical-offset="4503" max-vertical-offset="5253">
+          <caret line="289" column="69" selection-start-line="289" selection-start-column="69" selection-end-line="289" selection-end-column="69" />
           <folding>
-            <element signature="e#0#11787#0" expanded="true" />
+            <element signature="e#0#11949#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#2040#2041#0" expanded="true" />
             <element signature="e#2071#2072#0" expanded="true" />
@@ -1449,16 +1459,6 @@
             <element signature="e#3636#3657#0" expanded="true" />
             <element signature="e#11250#11251#0" expanded="true" />
             <element signature="e#11328#11329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nowPaperCV/src/main/java/com/dunrite/now/SettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6296296" vertical-offset="0" max-vertical-offset="1156">
-          <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

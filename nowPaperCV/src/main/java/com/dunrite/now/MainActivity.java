@@ -286,6 +286,9 @@ public class MainActivity extends ActionBarActivity {
                     }
                 };
                 fab.setOnClickListener(fabListen);
+                if(!((MainActivity)getActivity()).isAppInstalled("net.nurik.roman.muzei"))
+                    fab.hide(); //Hides FAB if Muzei is not installed
+
             }else{
                 ((MainActivity)getActivity()).getSupportActionBar().setTitle("nowPaper");
             	rootView = inflater.inflate(R.layout.fragment_home, container, false);
