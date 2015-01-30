@@ -20,7 +20,7 @@ public class SettingsActivity extends ActionBarActivity{
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("MUZEI SETTINGS");
+        getSupportActionBar().setTitle("Muzei Settings");
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new MyPreferenceFragment()).commit();
     }
