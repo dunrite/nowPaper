@@ -15,8 +15,8 @@
  */
 
 package com.dunrite.now;
+
 import android.app.Activity;
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -52,11 +52,11 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String[] mColorIcons;
     private ArrayAdapter<String> adapter;
-    
-	@Override
-	public void onBackPressed() {
-	    super.onBackPressed();
-	}
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class MainActivity extends ActionBarActivity {
         mColorIcons = getResources().getStringArray(R.array.color_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-        
+
         adapter = new MyPerformanceArrayAdapter(this, mColorIcons);
         // set a custom shadow that overlays the main content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -76,10 +76,10 @@ public class MainActivity extends ActionBarActivity {
         mDrawerList.setScrollingCacheEnabled(false);
         mDrawerList.setAnimationCacheEnabled(false);
         // enable ActionBar app icon to behave as action to toggle nav drawer
-       getSupportActionBar().setLogo(getResources().getDrawable(R.drawable.ablogo)); 
-       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       getSupportActionBar().setHomeButtonEnabled(true);
-       getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(getResources().getDrawable(R.drawable.ablogo));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // ActionBarDrawerToggle ties together the the proper interactions
         // between the sliding drawer and the action bar app icon
@@ -88,16 +88,16 @@ public class MainActivity extends ActionBarActivity {
                 mDrawerLayout,         /* DrawerLayout object */
                 R.string.drawer_open,
                 R.string.drawer_close  /* "close drawer" description for accessibility */
-                ) {
+        ) {
             @Override
-			public void onDrawerClosed(View view) {
+            public void onDrawerClosed(View view) {
                 supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-                
+
 
             }
 
             @Override
-			public void onDrawerOpened(View drawerView) {
+            public void onDrawerOpened(View drawerView) {
                 supportInvalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -105,10 +105,9 @@ public class MainActivity extends ActionBarActivity {
 
         if (savedInstanceState == null) {
             selectItem(0);
-        }   
-        
+        }
     }
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -125,43 +124,44 @@ public class MainActivity extends ActionBarActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
-   @Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-         // The action bar home/up action should open or close the drawer.
-         // ActionBarDrawerToggle will take care of this.
+        // The action bar home/up action should open or close the drawer.
+        // ActionBarDrawerToggle will take care of this.
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
         // Handle action buttons
-        switch(item.getItemId()) {
-        case R.id.action_about:
-            getSupportActionBar().setTitle("nowPaper");
-        	supportInvalidateOptionsMenu();
-        	selectItem(-1);
-        	return true;
-        case R.id.muzei_settings:
-        	Intent intent = new Intent(this, SettingsActivity.class);
-        	startActivity(intent);
-        	return true;
-        default:
-            return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                getSupportActionBar().setTitle("nowPaper");
+                supportInvalidateOptionsMenu();
+                selectItem(-1);
+                return true;
+            case R.id.muzei_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
-   	
-   public static String capitalizeString(String string) {
-	   char[] chars = string.toLowerCase().toCharArray();
-	   boolean found = false;
-	   for (int i = 0; i < chars.length; i++) {
-	     if (!found && Character.isLetter(chars[i])) {
-	       chars[i] = Character.toUpperCase(chars[i]);
-	       found = true;
-	     } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { // You can add other chars here
-	       found = false;
-	     }
-	   }
-	   return String.valueOf(chars);
-	 }
+
+    public static String capitalizeString(String string) {
+        char[] chars = string.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\'') { // You can add other chars here
+                found = false;
+            }
+        }
+        return String.valueOf(chars);
+    }
+
     /* The click listener for ListView in the navigation drawer */
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
@@ -204,32 +204,29 @@ public class MainActivity extends ActionBarActivity {
         // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-    
+
     public boolean isAppInstalled(String packageName) {
         PackageManager pm = getPackageManager();
         boolean installed = false;
         try {
-           pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
-           installed = true;
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            installed = true;
         } catch (PackageManager.NameNotFoundException e) {
-           installed = false;
+            installed = false;
         }
         return installed;
     }
 
-    public void setInMuzei(){
-        if(((String)getSupportActionBar().getTitle()).toLowerCase().equals("rockys")){
-            Utils.setLocation(getApplicationContext(), "Rocky Mountains");
-        }
-        else{
-            Utils.setLocation(this, capitalizeString(((String)getSupportActionBar().getTitle()).toLowerCase()));
-        }
+    public void setInMuzei() {
+
+        Utils.setLocation(this, capitalizeString(((String) getSupportActionBar().getTitle()).toLowerCase()));
         Intent updateIntent = new Intent(this, ArtSource.class);
         updateIntent.setAction(ProtocolConstants.ACTION_HANDLE_COMMAND);
         updateIntent.putExtra(ProtocolConstants.EXTRA_COMMAND_ID, MuzeiArtSource.BUILTIN_COMMAND_ID_NEXT_ARTWORK);
         startService(updateIntent);
         Toast.makeText(getApplicationContext(), "Location Applied in Muzei", Toast.LENGTH_LONG).show();
     }
+
     /**
      * Fragment that appears in the "content_frame", shows wallpapers
      */
@@ -238,67 +235,66 @@ public class MainActivity extends ActionBarActivity {
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
         private RecyclerView.LayoutManager mLayoutManager;
-        
+
 
         public ColorFragment() {
             // Empty constructor required for fragment subclasses
         }
-        
-        
+
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-        	final View rootView;
-        	int i = getArguments().getInt(ARG_COLOR_NUMBER);
-        	if(i == -1){ //special case for about screen
-        		rootView = inflater.inflate(R.layout.fragment_about, container, false);
-        		return rootView;
-        	}
+                                 Bundle savedInstanceState) {
+            final View rootView;
+            int i = getArguments().getInt(ARG_COLOR_NUMBER);
+            if (i == -1) { //special case for about screen
+                rootView = inflater.inflate(R.layout.fragment_about, container, false);
+                return rootView;
+            }
             String color = getResources().getStringArray(R.array.colors_array)[i];
-            String colorNS = color.replaceAll("\\s","");
-        	if(!color.equals("Home") ){
-	            rootView = inflater.inflate(R.layout.fragment_color, container, false);
-	            
-	            mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
-	            mRecyclerView.setHasFixedSize(true);
-	            
-	            // use a linear layout manager
-	            mLayoutManager = new LinearLayoutManager(this.getActivity());
-	            mRecyclerView.setLayoutManager(mLayoutManager);
+            String colorNS = color.replaceAll("\\s", "");
+            if (!color.equals("Home")) {
+                rootView = inflater.inflate(R.layout.fragment_color, container, false);
+
+                mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
+                mRecyclerView.setHasFixedSize(true);
+
+                // use a linear layout manager
+                mLayoutManager = new LinearLayoutManager(this.getActivity());
+                mRecyclerView.setLayoutManager(mLayoutManager);
                 FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
                 fab.attachToRecyclerView(mRecyclerView);
-	           
-	            String[] myDataset = {(colorNS + "/JPEG/dawn.jpg"), 
-	            		(colorNS + "/JPEG/day.jpg"), 
-	            		(colorNS + "/JPEG/dusk.jpg"), 
-	            		(colorNS + "/JPEG/night.jpg")};
-	            
-				// specify an adapter (see also next example)
-	            mAdapter = new RecAdapter(getActivity(), myDataset);
-	            mRecyclerView.setAdapter(mAdapter);
-	            ((ActionBarActivity)getActivity()).getSupportActionBar().setTitle(color.toUpperCase());
+
+                String[] myDataset = {(colorNS + "/JPEG/dawn.jpg"),
+                        (colorNS + "/JPEG/day.jpg"),
+                        (colorNS + "/JPEG/dusk.jpg"),
+                        (colorNS + "/JPEG/night.jpg")};
+
+                // specify an adapter (see also next example)
+                mAdapter = new RecAdapter(getActivity(), myDataset);
+                mRecyclerView.setAdapter(mAdapter);
+                ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(color);
 
                 View.OnClickListener fabListen = new View.OnClickListener() {
                     Activity c = getActivity();
+
                     @Override
                     public void onClick(View v) {
-                        ((MainActivity)c).setInMuzei();
+                        ((MainActivity) c).setInMuzei();
                     }
                 };
                 fab.setOnClickListener(fabListen);
-                if(!((MainActivity)getActivity()).isAppInstalled("net.nurik.roman.muzei"))
+                if (!((MainActivity) getActivity()).isAppInstalled("net.nurik.roman.muzei"))
                     fab.hide(); //Hides FAB if Muzei is not installed
 
-            }else{
-                ((MainActivity)getActivity()).getSupportActionBar().setTitle("nowPaper");
-            	rootView = inflater.inflate(R.layout.fragment_home, container, false);
-            	if(((MainActivity)getActivity()).isAppInstalled("net.nurik.roman.muzei")){
-            		
-            	}
-            }
+            } else {
+                ((MainActivity) getActivity()).getSupportActionBar().setTitle("nowPaper");
+                rootView = inflater.inflate(R.layout.fragment_home, container, false);
+                if (((MainActivity) getActivity()).isAppInstalled("net.nurik.roman.muzei")) {
 
-            return rootView;  
-            
+                }
+            }
+            return rootView;
         }
     }
 }
