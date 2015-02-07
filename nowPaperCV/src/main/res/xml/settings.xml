@@ -36,13 +36,14 @@
 				android:summaryOn="@string/fourk_on"
 				android:enabled="true"/>
 		
-<!-- 		<Preference -->
-<!--     			android:title="Adjust Blur and Dimming" -->
-<!--     			android:summary="Change how much of each effect you want"> -->
-<!-- 			<intent  -->
-<!-- 	        	android:action="android.intent.action.VIEW" -->
-<!-- 	        	android:targetPackage="net.nurik.roman.muzei" -->
-<!-- 	        	android:targetClass="com.google.android.apps.muzei.settings.SettingsActivity"/> -->
-<!-- 		</Preference> -->
+ 	<!--	<Preference
+     			android:title="Adjust Blur, Dimming and Greyscale"
+    			android:summary="Change how much of each effect you want">
+ 			<intent
+                android:id="@+id/intent"
+                android:action="android.intent.action.VIEW"
+ 	        	android:targetPackage="net.nurik.roman.muzei"
+ 	        	android:targetClass="com.google.android.apps.muzei.settings.SettingsActivity"/>
+ 		</Preference>-->
 		
 </PreferenceScreen>

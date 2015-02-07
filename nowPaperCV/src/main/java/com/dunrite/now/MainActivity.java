@@ -17,6 +17,9 @@
 package com.dunrite.now;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.content.Context;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,6 +27,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v4.view.GravityCompat;
@@ -38,6 +42,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -52,6 +57,7 @@ public class MainActivity extends ActionBarActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private String[] mColorIcons;
     private ArrayAdapter<String> adapter;
+    private static Context context;
 
     @Override
     public void onBackPressed() {
@@ -62,6 +68,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MainActivity.context = getApplicationContext();
 
         mColorIcons = getResources().getStringArray(R.array.color_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -76,7 +83,7 @@ public class MainActivity extends ActionBarActivity {
         mDrawerList.setScrollingCacheEnabled(false);
         mDrawerList.setAnimationCacheEnabled(false);
         // enable ActionBar app icon to behave as action to toggle nav drawer
-        getSupportActionBar().setLogo(getResources().getDrawable(R.drawable.ablogo));
+        getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.ablogo));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -135,7 +142,7 @@ public class MainActivity extends ActionBarActivity {
         // Handle action buttons
         switch (item.getItemId()) {
             case R.id.action_about:
-                getSupportActionBar().setTitle("nowPaper");
+                getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.ablogo));
                 supportInvalidateOptionsMenu();
                 selectItem(-1);
                 return true;
@@ -226,6 +233,12 @@ public class MainActivity extends ActionBarActivity {
         startService(updateIntent);
         Toast.makeText(getApplicationContext(), "Location Applied in Muzei", Toast.LENGTH_LONG).show();
     }
+    /**
+     * Static way for the java classes to receive the application context
+     */
+    public static Context getAppContext() {
+        return MainActivity.context;
+    }
 
     /**
      * Fragment that appears in the "content_frame", shows wallpapers
@@ -255,7 +268,7 @@ public class MainActivity extends ActionBarActivity {
             String colorNS = color.replaceAll("\\s", "");
             if (!color.equals("Home")) {
                 rootView = inflater.inflate(R.layout.fragment_color, container, false);
-
+                ((MainActivity) getActivity()).getSupportActionBar().setIcon(getResources().getColor(android.R.color.transparent));
                 mRecyclerView = (RecyclerView) rootView.findViewById(R.id.my_recycler_view);
                 mRecyclerView.setHasFixedSize(true);
 
@@ -277,7 +290,6 @@ public class MainActivity extends ActionBarActivity {
 
                 View.OnClickListener fabListen = new View.OnClickListener() {
                     Activity c = getActivity();
-
                     @Override
                     public void onClick(View v) {
                         ((MainActivity) c).setInMuzei();
@@ -285,14 +297,44 @@ public class MainActivity extends ActionBarActivity {
                 };
                 fab.setOnClickListener(fabListen);
                 if (!((MainActivity) getActivity()).isAppInstalled("net.nurik.roman.muzei"))
-                    fab.hide(); //Hides FAB if Muzei is not installed
-
+                    fab.setVisibility(View.INVISIBLE);
+                else
+                    fab.setVisibility(View.VISIBLE);
             } else {
-                ((MainActivity) getActivity()).getSupportActionBar().setTitle("nowPaper");
+                ((MainActivity) getActivity()).getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.ablogo));
                 rootView = inflater.inflate(R.layout.fragment_home, container, false);
+                CardView muzeiCard = (CardView) rootView.findViewById(R.id.card_4);
+                TextView muzeiDesc = (TextView) rootView.findViewById(R.id.muzei);
+                final boolean isInstalled;
                 if (((MainActivity) getActivity()).isAppInstalled("net.nurik.roman.muzei")) {
-
+                    muzeiDesc.setText(R.string.muzei_enable);
+                    isInstalled=true;
+                }else{
+                    muzeiDesc.setText(R.string.muzei_install);
+                    isInstalled=false;
                 }
+                View.OnClickListener m = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(isInstalled){
+                            Intent i;
+                            PackageManager manager = getAppContext().getPackageManager();
+                            try {
+                                i = manager.getLaunchIntentForPackage("net.nurik.roman.muzei");
+                                if (i == null)
+                                    throw new PackageManager.NameNotFoundException();
+                                i.setClassName("net.nurik.roman.muzei", "com.google.android.apps.muzei.settings.SettingsActivity");
+                                getAppContext().startActivity(i);
+                            } catch (PackageManager.NameNotFoundException e) {
+
+                            }
+                        }else{
+                            rootView.getContext().startActivity(
+                                    new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=net.nurik.roman.muzei")));
+                        }
+                    }
+                };
+                muzeiCard.setOnClickListener(m);
             }
             return rootView;
         }

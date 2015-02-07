@@ -11,10 +11,9 @@
         android:layout_gravity="center"
         android:layout_width="320dp"
         android:layout_height="180dp"
-        android:layout_margin="5dp"
+        android:layout_margin="4dp"
         android:clickable="true"
-        card_view:contentPadding="2dp"
-        card_view:cardCornerRadius="5dp"
+        card_view:cardCornerRadius="2dp"
         card_view:cardElevation="3dp">
 
         <ImageView

@@ -24,7 +24,7 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/about" 
-	    android:textSize="50sp"
+	    android:textSize="40sp"
 	    android:textColor="#FFF"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -39,25 +39,25 @@
         android:id="@+id/card_5"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
         card_view:cardElevation="3dp">
         <ImageView
             android:id="@+id/exc"
-            android:layout_height="wrap_content"
-            android:layout_width="55dp"
+            android:layout_height="65dp"
+            android:layout_width="60dp"
             android:src="@drawable/exc"
             android:layout_gravity="left"/>
         <TextView
 	       android:id="@+id/disclaimer"
-	       android:paddingLeft="60dp"
+	       android:paddingLeft="68dp"
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
-	       android:text="@string/disclaimer" 
-	       android:textSize="18sp"/>
+	       android:text="@string/disclaimer"
+            android:textSize="@dimen/abc_text_size_body_2_material" />
     </android.support.v7.widget.CardView>
     
     <android.support.v7.widget.CardView
@@ -65,26 +65,28 @@
         android:id="@+id/card_6"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
         
         <ImageView
             android:id="@+id/aleximg"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_width="60dp"
             android:src="@drawable/alex"
             android:layout_gravity="left"/>
         <TextView
 	       android:id="@+id/alexdsc"
-	       android:paddingLeft="60dp"
+	       android:paddingLeft="68dp"
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
 	       android:text="@string/alex" 
-	       android:textSize="18sp"/>
+	       android:textSize="@dimen/abc_text_size_body_2_material"/>
         
     </android.support.v7.widget.CardView>
     
@@ -93,15 +95,17 @@
         android:id="@+id/card_7"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
         <ImageView
             android:id="@+id/jaxonimg"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_width="60dp"
             android:src="@drawable/jaxon"
             android:layout_gravity="left"/>
@@ -110,8 +114,8 @@
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
 	       android:text="@string/jaxon" 
-	       android:textSize="18sp"
-	       android:paddingLeft="60dp"/>
+	       android:textSize="@dimen/abc_text_size_body_2_material"
+	       android:paddingLeft="68dp"/>
     </android.support.v7.widget.CardView>
     
     <android.support.v7.widget.CardView
@@ -119,12 +123,14 @@
         android:id="@+id/card_8"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp">
         
         <ImageView
             android:id="@+id/dunrite_icon"

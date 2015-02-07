@@ -23,6 +23,7 @@ public class SettingsActivity extends ActionBarActivity{
         getSupportActionBar().setTitle("Muzei Settings");
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new MyPreferenceFragment()).commit();
+
     }
 
     @Override
@@ -40,12 +41,14 @@ public class SettingsActivity extends ActionBarActivity{
 
         private static final String LOCATION_PREFERENCE = "location_preference";
         private static final String FOURK_PREFERENCE = "fourk_preference";
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
             this.addPreferencesFromResource(R.xml.settings);
             PreferenceManager.getDefaultSharedPreferences(getActivity()).registerOnSharedPreferenceChangeListener(this);
+
         }
 
         @Override

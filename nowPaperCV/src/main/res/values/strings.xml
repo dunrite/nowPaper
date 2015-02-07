@@ -19,17 +19,18 @@
     <string name="app_desc">Google Now Inspired Wallpapers</string>
     <string name="welcome">Welcome</string> <!-- Keep spaces at the end for now -->
     <string name="about">About</string> <!-- Keep spaces at the end for now -->
-    <string name="swipe">Swipe from left to right to open the wallpaper menu.</string>
-    <string name="design">All wallpapers were designed by the talented Alex Pasquarella.</string>
+    <string name="swipe">Swipe from left to right to browse from the selection of locations available.</string>
+    <string name="design">All wallpapers were designed by the talented artist Alex Pasquarella.</string>
     <string name="muzei_enable">Click here to enable the Muzei Extension. This allows automatic time-cycling.</string>
     <string name="muzei_install">In order to get time-cycling, you need Muzei. Click here to install it!</string>
     <string name="welcomecard">nowPaper allows you to apply wallpapers inspired by Google Now straight to your device\'s homescreen.</string>
-    <string name="tap">TAP to apply image as wallpaper \nor \nHOLD to download image.</string>
+    <string name="tap">TAP to apply image as wallpaper\nHOLD to download image.</string>
     <string name="jaxon">Developed by\nJaxon Wright\nwww.jaxonwright.com</string>
     <string name="alex">Wallpapers by\nAlex Pasquarella\nwww.alexpasquarella.com</string>
     <string name="disclaimer">These wallpaper designs are not permitted for commercial use without licensing agreement.</string>
     <string-array name="colors_array">        
         <item>Home</item>
+        <item>London</item>
         <item>New York</item>
         <item>Chicago</item>
         <item>Portland</item>
@@ -48,6 +49,7 @@
     </string-array>
     <string-array name="color_icons">        
         <item>home</item>
+        <item>london</item>
         <item>newyork</item>
         <item>chicago</item>
         <item>portland</item>
@@ -79,7 +81,7 @@
     <string name="random">Random Location</string>
     <string name="random_off">Will keep same location each day</string>
     <string name="random_on">Will rotate locations randomly each day</string>
-    <string name="fourk">4K Wallpapers [for select locations]</string>
+    <string name="fourk">4K Resolution</string>
     <string name="fourk_off">Will only use 1080p images</string>
     <string name="fourk_on">Will use 4K images [Recommended only if you have a QHD display]</string>
        
@@ -89,6 +91,7 @@
         <item name="Chicago">Chicago</item>        
         <item name="Conesus">Conesus</item>
         <item name="Greatplains">Great Plains</item>
+        <item name="London">London</item>
         <item name="Newyork">New York</item>
         <item name="Portland">Portland</item>
         <item name="Rochester">Rochester</item>
@@ -106,6 +109,7 @@
         <item name="Chicago">Chicago</item> 
         <item name="Conesus">Conesus</item>
         <item name="Greatplains">Great Plains</item>
+        <item name="London">London</item>
         <item name="Newyork">New York</item>
         <item name="Portland">Portland</item>
         <item name="Rochester">Rochester</item>

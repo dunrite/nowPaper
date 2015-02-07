@@ -152,7 +152,8 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 		// - get element from your dataset at this position
 		// - replace the contents of the view with that element
 
-		Glide.with(context).load(URL + mDataset[position]).centerCrop()
+		Glide.with(context).load(URL + mDataset[position])
+                .centerCrop()
 				.into(holder.mImageView);
 		String r = mDataset[position].replaceAll("/JPEG", "");
 		String rest = r.replaceAll("jpg", "png");

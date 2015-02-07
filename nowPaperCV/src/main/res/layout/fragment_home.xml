@@ -24,7 +24,7 @@
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/welcome" 
-	    android:textSize="50sp"
+	    android:textSize="40sp"
 	    android:textColor="#FFF"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -38,19 +38,19 @@
         android:id="@+id/card_1"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp"
+        android:layout_margin="8dp">
         
         <TextView
 	       android:id="@+id/welcome"
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
 	       android:text="@string/welcomecard" 
-	       android:textSize="18sp"/>
+	       android:textSize="@dimen/abc_text_size_body_1_material"/>
     </android.support.v7.widget.CardView>
     
     <android.support.v7.widget.CardView
@@ -58,16 +58,17 @@
         android:id="@+id/card_2"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp">
         
         <ImageView
             android:id="@+id/swipe_icon"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_width="60dp"
             android:src="@drawable/swipe"
             android:layout_gravity="left"/>
@@ -77,57 +78,37 @@
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
 	       android:text="@string/swipe" 
-	       android:textSize="18sp"/>
+	       android:textSize="@dimen/abc_text_size_body_1_material"/>
         
     </android.support.v7.widget.CardView>
-    
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_3"
-        android:layout_gravity="center"
-        android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
-        android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
-        
-        <TextView
-	       android:id="@+id/design"
-	       android:layout_width="wrap_content"
-	       android:layout_height="wrap_content"
-	       android:text="@string/design" 
-	       android:textSize="18sp"/>
-    </android.support.v7.widget.CardView>
-    
+
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_4"
         android:layout_gravity="center"
         android:layout_width="320dp"
-        android:layout_height="80dp"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
         android:clickable="false"
-        card_view:contentPadding="5dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="3dp">
+        card_view:contentPadding="16dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp"
+        android:layout_margin="8dp">
         
         <ImageView
             android:id="@+id/muzei_icon"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_width="60dp"
             android:src="@drawable/muzeiicon"
             android:layout_gravity="left"/>
         <TextView
 	       android:id="@+id/muzei"
-	       android:paddingLeft="60dp"
+	       android:paddingLeft="68dp"
 	       android:layout_width="wrap_content"
 	       android:layout_height="wrap_content"
 	       android:text="@string/muzei_enable" 
-	       android:textSize="18sp"/>
+	       android:textSize="@dimen/abc_text_size_body_1_material"/>
         
     </android.support.v7.widget.CardView>
-    
+
 </LinearLayout>
 </ScrollView>
