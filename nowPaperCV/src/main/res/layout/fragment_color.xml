@@ -21,34 +21,7 @@
     	android:layout_height="match_parent"
     	android:orientation="vertical"
     	tools:context=".MainActivity">
-    
-    	<android.support.v7.widget.CardView
-	        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-	        android:id="@+id/card_1"
-	        android:layout_width="320dp"
-	        android:layout_height="wrap_content"
-	        android:layout_margin="8dp"
-	        android:clickable="false"
-	        tools:context=".MainActivity"
-	        card_view:contentPadding="16dp"
-	        card_view:cardCornerRadius="2dp"
-	        card_view:cardElevation="10dp"
-	        android:clipToPadding="false"
-	        android:layout_centerHorizontal="true">
-	        <ImageView
-	            android:id="@+id/tap_icon"
-	            android:layout_height="65dp"
-	            android:layout_width="60dp"
-	            android:src="@drawable/tap"
-	            android:layout_gravity="left"/>
-	        <TextView
-		       android:id="@+id/tap"
-		       android:layout_width="wrap_content"
-		       android:layout_height="wrap_content"
-		       android:text="@string/tap" 
-		       android:paddingLeft="68dp"
-		       android:textSize="@dimen/abc_text_size_body_1_material"/>
-	    </android.support.v7.widget.CardView>
+
     <!-- A RecyclerView with some commonly used attributes -->
 	    <android.support.v7.widget.RecyclerView
 		    android:id="@+id/my_recycler_view"
@@ -56,8 +29,7 @@
 	    	android:layout_height="match_parent"
 	    	tools:context=".MainActivity"
 	    	tools:listitem="@layout/card"
-	        android:clipToPadding="false"
-	        android:paddingTop="93dp"/>
+	        android:clipToPadding="false"/>
 
         <com.melnykov.fab.FloatingActionButton
             android:id="@+id/fab"

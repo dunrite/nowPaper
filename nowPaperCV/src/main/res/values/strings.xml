@@ -30,41 +30,43 @@
     <string name="disclaimer">These wallpaper designs are not permitted for commercial use without licensing agreement.</string>
     <string-array name="colors_array">        
         <item>Home</item>
+        <item>Austin</item>
+        <item>Canyon</item>
+        <item>Chicago</item>
+        <item>Conesus</item>
+        <item>Grand Rapids</item>
+        <item>Great Plains</item>
         <item>London</item>
         <item>New York</item>
-        <item>Chicago</item>
         <item>Portland</item>
-        <item>Austin</item>
-        <item>San Francisco</item>
-        <item>San Diego</item>
         <item>Rochester</item>
-        <item>Toronto</item>
-        <item>Winter Lake</item>
-        <item>Conesus</item>
-        <item>Tahoe</item>
-        <item>Canyon</item>
         <item>Rocky Mountains</item>
-        <item>Great Plains</item>
+        <item>San Diego</item>
+        <item>San Francisco</item>
+        <item>Tahoe</item>
+        <item>Toronto</item>
         <item>Wind Farm</item>
+        <item>Winter Lake</item>
     </string-array>
-    <string-array name="color_icons">        
+    <string-array name="color_icons">
         <item>home</item>
+        <item>austin</item>
+        <item>canyon</item>
+        <item>chicago</item>
+        <item>conesus</item>
+        <item>grandrapids</item>
+        <item>greatplains</item>
         <item>london</item>
         <item>newyork</item>
-        <item>chicago</item>
         <item>portland</item>
-        <item>austin</item>
-        <item>sanfrancisco</item>
-        <item>sandiego</item>
         <item>rochester</item>
-        <item>toronto</item>
-        <item>winterlake</item>
-        <item>conesus</item>
-        <item>tahoe</item>
-        <item>canyon</item>
         <item>rockymountains</item>
-        <item>greatplains</item>
+        <item>sandiego</item>
+        <item>sanfrancisco</item>
+        <item>tahoe</item>
+        <item>toronto</item>
         <item>cwf</item>
+        <item>winterlake</item>
     </string-array>
     
     <string name="drawer_open">Open navigation drawer</string>
@@ -90,6 +92,7 @@
         <item name="Canyon">Canyon</item>
         <item name="Chicago">Chicago</item>        
         <item name="Conesus">Conesus</item>
+        <item name="Grandrapids">Grand Rapids</item>
         <item name="Greatplains">Great Plains</item>
         <item name="London">London</item>
         <item name="Newyork">New York</item>
@@ -108,6 +111,7 @@
         <item name="Canyon">Canyon</item>
         <item name="Chicago">Chicago</item> 
         <item name="Conesus">Conesus</item>
+        <item name="Grandrapids">Grand Rapids</item>
         <item name="Greatplains">Great Plains</item>
         <item name="London">London</item>
         <item name="Newyork">New York</item>

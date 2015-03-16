@@ -2,6 +2,8 @@ package com.dunrite.now;
 
 import com.google.android.apps.muzei.api.MuzeiArtSource;
 import com.google.android.apps.muzei.api.internal.ProtocolConstants;
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,10 +13,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 
 public class SettingsActivity extends ActionBarActivity{
+    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SettingsActivity.context = getApplicationContext();
         setContentView(R.layout.settings_activity);
         getSupportActionBar().setLogo(getResources().getDrawable(R.drawable.ablogo));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -36,6 +40,10 @@ public class SettingsActivity extends ActionBarActivity{
         return super.onOptionsItemSelected(item);
     }
 
+    public static Context getAppContext() {
+        return SettingsActivity.context;
+    }
+
     public static class MyPreferenceFragment extends PreferenceFragment
             implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -47,7 +55,7 @@ public class SettingsActivity extends ActionBarActivity{
 
             super.onCreate(savedInstanceState);
             this.addPreferencesFromResource(R.xml.settings);
-            PreferenceManager.getDefaultSharedPreferences(getActivity()).registerOnSharedPreferenceChangeListener(this);
+            PreferenceManager.getDefaultSharedPreferences(SettingsActivity.getAppContext()).registerOnSharedPreferenceChangeListener(this);
 
         }
 
@@ -56,10 +64,10 @@ public class SettingsActivity extends ActionBarActivity{
                                               String key) {
 
             if (LOCATION_PREFERENCE.equals(key) || FOURK_PREFERENCE.equals(key)) {
-                Intent updateIntent = new Intent(getActivity(), ArtSource.class);
+                Intent updateIntent = new Intent(SettingsActivity.getAppContext(), ArtSource.class);
                 updateIntent.setAction(ProtocolConstants.ACTION_HANDLE_COMMAND);
                 updateIntent.putExtra(ProtocolConstants.EXTRA_COMMAND_ID, MuzeiArtSource.BUILTIN_COMMAND_ID_NEXT_ARTWORK);
-                getActivity().startService(updateIntent);
+                SettingsActivity.getAppContext().startService(updateIntent);
             }
         }
     }

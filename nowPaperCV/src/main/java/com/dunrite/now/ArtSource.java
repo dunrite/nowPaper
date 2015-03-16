@@ -81,7 +81,7 @@ public class ArtSource extends RemoteMuzeiArtSource {
 					.imageUri(
 							Uri.parse(imageURL))
 					.title(locationS + " (" + setting + ")")
-					.byline("Alex Pasquarella, c. 2014")
+					.byline("Alex Pasquarella, c. 2015")
 					.viewIntent(
 							new Intent(Intent.ACTION_VIEW, Uri
 									.parse("http://alexpasquarella.com")))
