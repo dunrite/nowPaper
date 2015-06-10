@@ -125,4 +125,5 @@
         <item name="Windfarm">Wind Farm</item>
         <item name="Winterlake">Winter Lake</item>
     </string-array>
+    <string name="my_digital_name">My Digital</string>
 </resources>
