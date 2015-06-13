@@ -14,6 +14,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,7 +25,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 	private static String[] mDataset;
@@ -55,15 +55,17 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 		@Override
 		public void onClick(View v) {
 			new SetWallpaperAsyncTask(v.getContext()).execute("");
-			Toast.makeText(v.getContext(), "Setting Wallpaper", Toast.LENGTH_LONG).show();
+			Snackbar
+					.make(v, "Setting Wallpaper", Snackbar.LENGTH_LONG)
+					.show();
 		}
 		
 		@Override
 		public boolean onLongClick(View v) {
-			downloadFile(URL2 + currentItem, v.getContext());
+			downloadFile(URL2 + currentItem, v.getContext(), v);
 			return true;
 		}
-		public void downloadFile(String uRl,Context c) {
+		public void downloadFile(String uRl,Context c, View v) {
 			Context con = c;
 		    File direct = new File(Environment.getExternalStorageDirectory()
 		            + "/nowPaper");
@@ -86,7 +88,10 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 		            .setDestinationInExternalPublicDir("/nowPaper/", currentItem.replaceAll("/",""));
 		    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 		    mgr.enqueue(request);
-		    Toast.makeText(c, "Downloading Image", Toast.LENGTH_LONG).show();
+            Snackbar
+                    .make(v, "Downloading Image", Snackbar.LENGTH_LONG)
+                    .show();
+
 		}
 		private class SetWallpaperAsyncTask extends
 				AsyncTask<String, Void, String> {

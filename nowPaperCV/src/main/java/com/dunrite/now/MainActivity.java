@@ -17,22 +17,23 @@
 package com.dunrite.now;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.content.Context;
-import android.net.Uri;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -43,15 +44,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import com.dunrite.now.R;
 import com.google.android.apps.muzei.api.MuzeiArtSource;
 import com.google.android.apps.muzei.api.internal.ProtocolConstants;
-import com.melnykov.fab.FloatingActionButton;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -231,7 +228,9 @@ public class MainActivity extends ActionBarActivity {
         updateIntent.setAction(ProtocolConstants.ACTION_HANDLE_COMMAND);
         updateIntent.putExtra(ProtocolConstants.EXTRA_COMMAND_ID, MuzeiArtSource.BUILTIN_COMMAND_ID_NEXT_ARTWORK);
         startService(updateIntent);
-        Toast.makeText(getApplicationContext(), "Location Applied in Muzei", Toast.LENGTH_LONG).show();
+        Snackbar
+                .make(findViewById(R.id.main_content), R.string.applied, Snackbar.LENGTH_LONG)
+                .show();
     }
     /**
      * Static way for the java classes to receive the application context
@@ -276,7 +275,6 @@ public class MainActivity extends ActionBarActivity {
                 mLayoutManager = new LinearLayoutManager(this.getActivity());
                 mRecyclerView.setLayoutManager(mLayoutManager);
                 FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-                fab.attachToRecyclerView(mRecyclerView);
 
                 String[] myDataset = {(colorNS + "/JPEG/dawn.jpg"),
                         (colorNS + "/JPEG/day.jpg"),
@@ -286,7 +284,7 @@ public class MainActivity extends ActionBarActivity {
                 // specify an adapter (see also next example)
                 mAdapter = new RecAdapter(getActivity(), myDataset);
                 mRecyclerView.setAdapter(mAdapter);
-                ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(color);
+                ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(color);
 
                 View.OnClickListener fabListen = new View.OnClickListener() {
                     Activity c = getActivity();

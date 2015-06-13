@@ -9,10 +9,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class SettingsActivity extends ActionBarActivity{
+public class SettingsActivity extends AppCompatActivity{
     private static Context context;
 
     @Override
