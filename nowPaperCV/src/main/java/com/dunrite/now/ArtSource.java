@@ -1,12 +1,12 @@
 package com.dunrite.now;
 
-import java.util.Calendar;
+import android.content.Intent;
+import android.net.Uri;
 
 import com.google.android.apps.muzei.api.Artwork;
 import com.google.android.apps.muzei.api.RemoteMuzeiArtSource;
 
-import android.content.Intent;
-import android.net.Uri;
+import java.util.Calendar;
 
 public class ArtSource extends RemoteMuzeiArtSource {
 	private static final String SOURCE_NAME = "ArtSource";
@@ -22,8 +22,8 @@ public class ArtSource extends RemoteMuzeiArtSource {
 	@Override
 	protected void onTryUpdate(int reason) throws RetryException {
 
-		String setting = new String(); // dawn,day,dusk,night
-		String imageURL = new String();
+		String setting; // dawn,day,dusk,night
+		String imageURL;
 		
 		
 		Calendar today = Calendar.getInstance();
@@ -33,11 +33,12 @@ public class ArtSource extends RemoteMuzeiArtSource {
 		long updateTime = 0;
 
 		unscheduleUpdate();
-		
+		//if user has removed artwork, reset to canyon
+		Utils.resetRemoved(this);
 		if (!(Utils.isDownloadOnlyOnWifi(this) && !Utils.isWifiConnected(this))) { //does this as long as wifi settings are correct
 
 			if (hour >= 6 && hour < 9) {
-				if(Utils.isRandom(this) && randomized != true){//Set a Random location
+				if(Utils.isRandom(this) && !randomized){//Set a Random location
 					Utils.setRandomLocation(this);
 					randomized = true; //so it doesn't get caught in a loop
 				}			

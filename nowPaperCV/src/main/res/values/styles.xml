@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="custom" parent="Base.AppTheme">
-    	<item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-	</style>
-	<style name="Base.AppTheme" parent="Theme.AppCompat.Light">
-		<item name="colorPrimary">#FFF</item>
-		<item name="colorPrimaryDark">#8cced7</item>
-		<item name="colorAccent">#4e679a</item>
-	</style>
-	<style name="RobotoTextViewStyle" parent="android:Widget.TextView">
-    	<item name="android:fontFamily">sans-serif-medium</item>
-	</style>
+<style name="custom" parent="Base.AppTheme">
+    <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+</style>
+<style name="Base.AppTheme" parent="Theme.AppCompat.Light">
+    <item name="colorPrimary">#FFF</item>
+    <item name="colorPrimaryDark">#8cced7</item>
+    <item name="colorAccent">#4e679a</item>
+</style>
+<style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+    <item name="android:fontFamily">sans-serif-medium</item>
+</style>
+<style name="floating_action_button">
+    <item name="android:layout_marginLeft">0dp</item>
+    <item name="android:layout_marginTop">0dp</item>
+    <item name="android:layout_marginRight">8dp</item>
+    <item name="android:layout_marginBottom">0dp</item>
+</style>
 </resources>

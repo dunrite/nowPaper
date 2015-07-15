@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MainActivity.context = getApplicationContext();
-
+        //if user has removed artwork, reset it to canyon
+        Utils.resetRemoved(context);
         mColorIcons = getResources().getStringArray(R.array.color_icons);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
@@ -230,8 +231,8 @@ public class MainActivity extends AppCompatActivity {
         startService(updateIntent);
         Snackbar
                 .make(findViewById(R.id.main_content), R.string.applied, Snackbar.LENGTH_LONG)
-                .show();
-    }
+            .show();
+}
     /**
      * Static way for the java classes to receive the application context
      */

@@ -1,13 +1,17 @@
 package com.dunrite.now;
 
-import java.util.Random;
-
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
+
+import com.google.android.apps.muzei.api.MuzeiArtSource;
+import com.google.android.apps.muzei.api.internal.ProtocolConstants;
+
+import java.util.Random;
 
 public class Utils {
 
@@ -40,8 +44,7 @@ public class Utils {
 
 	protected static String getLocation(Context context) {
 		SharedPreferences preferences = getPreferences(context);
-		String location = preferences.getString("location_preference", "Canyon");
-		return location;
+		return preferences.getString("location_preference", "Canyon");
 	}
 	
 	protected static void setRandomLocation(Context context){
@@ -50,13 +53,13 @@ public class Utils {
 		SharedPreferences.Editor editor = preferences.edit();
 		String curr = preferences.getString("location_preference", null);
 		int idx = new Random().nextInt(res.getStringArray(R.array.locationValues).length);
-		String random = (String) (res.getStringArray(R.array.locationValues)[idx]);
+		String random = res.getStringArray(R.array.locationValues)[idx];
 		
 		if(random.equals(curr))
 			setRandomLocation(context);
 		else{
 			editor.putString("location_preference", random);
-			editor.commit();
+			editor.apply();
 		}		
 	}
 	
@@ -64,11 +67,25 @@ public class Utils {
 		SharedPreferences preferences = getPreferences(context);
 		SharedPreferences.Editor editor = preferences.edit();	
         editor.putString("location_preference", loc);
-		editor.commit();
+		editor.apply();
 				
 	}
 	private static SharedPreferences getPreferences(Context context) {
 		return PreferenceManager.getDefaultSharedPreferences(context);
 	}
 
+	public static void resetRemoved(Context context) {
+		if (getLocation(context).equals("Austin") ||
+                getLocation(context).equals("Chicago") ||
+                getLocation(context).equals("Great Plains") ||
+                getLocation(context).equals("London") ||
+                getLocation(context).equals("New York") ||
+                getLocation(context).equals("Rocky Mountains")) {
+			setLocation(context, "Canyon");
+            Intent updateIntent = new Intent(context, ArtSource.class);
+            updateIntent.setAction(ProtocolConstants.ACTION_HANDLE_COMMAND);
+            updateIntent.putExtra(ProtocolConstants.EXTRA_COMMAND_ID, MuzeiArtSource.BUILTIN_COMMAND_ID_NEXT_ARTWORK);
+            context.startService(updateIntent);
+		}
+	}
 }

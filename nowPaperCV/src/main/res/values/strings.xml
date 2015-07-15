@@ -31,40 +31,24 @@
     <string name="applied">Location Applied in Muzei</string>
     <string-array name="colors_array">        
         <item>Home</item>
-        <item>Austin</item>
         <item>Canyon</item>
-        <item>Chicago</item>
         <item>Conesus</item>
         <item>Grand Rapids</item>
-        <item>Great Plains</item>
-        <item>London</item>
-        <item>New York</item>
         <item>Portland</item>
         <item>Rochester</item>
-        <item>Rocky Mountains</item>
         <item>San Diego</item>
-        <item>San Francisco</item>
-        <item>Tahoe</item>
         <item>Toronto</item>
         <item>Wind Farm</item>
         <item>Winter Lake</item>
     </string-array>
     <string-array name="color_icons">
         <item>home</item>
-        <item>austin</item>
         <item>canyon</item>
-        <item>chicago</item>
         <item>conesus</item>
         <item>grandrapids</item>
-        <item>greatplains</item>
-        <item>london</item>
-        <item>newyork</item>
         <item>portland</item>
         <item>rochester</item>
-        <item>rockymountains</item>
         <item>sandiego</item>
-        <item>sanfrancisco</item>
-        <item>tahoe</item>
         <item>toronto</item>
         <item>cwf</item>
         <item>winterlake</item>
@@ -89,39 +73,23 @@
     <string name="fourk_on">Will use 4K images [Recommended only if you have a QHD display]</string>
        
     <string-array name="locations">
-        <item name="Austin">Austin</item>
         <item name="Canyon">Canyon</item>
-        <item name="Chicago">Chicago</item>        
         <item name="Conesus">Conesus</item>
         <item name="Grandrapids">Grand Rapids</item>
-        <item name="Greatplains">Great Plains</item>
-        <item name="London">London</item>
-        <item name="Newyork">New York</item>
         <item name="Portland">Portland</item>
         <item name="Rochester">Rochester</item>
-        <item name="Rockys">Rocky Mountains</item>
         <item name="Sandiego">San Diego</item>
-        <item name="Sanfrancisco">San Francisco</item>
-        <item name="Tahoe">Tahoe</item>
-        <item name="Toronto">Toronto</item> 
+        <item name="Toronto">Toronto</item>
         <item name="Windfarm">Wind Farm</item>
         <item name="Winterlake">Winter Lake</item>
     </string-array>
     <string-array name="locationValues">
-        <item name="Austin">Austin</item>
         <item name="Canyon">Canyon</item>
-        <item name="Chicago">Chicago</item> 
         <item name="Conesus">Conesus</item>
         <item name="Grandrapids">Grand Rapids</item>
-        <item name="Greatplains">Great Plains</item>
-        <item name="London">London</item>
-        <item name="Newyork">New York</item>
         <item name="Portland">Portland</item>
         <item name="Rochester">Rochester</item>
-        <item name="Rockys">Rocky Mountains</item>
         <item name="Sandiego">San Diego</item>
-        <item name="Sanfrancisco">San Francisco</item>
-        <item name="Tahoe">Tahoe</item>
         <item name="Toronto">Toronto</item>
         <item name="Windfarm">Wind Farm</item>
         <item name="Winterlake">Winter Lake</item>
