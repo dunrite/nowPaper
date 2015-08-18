@@ -22,8 +22,8 @@ public class ArtSource extends RemoteMuzeiArtSource {
 	@Override
 	protected void onTryUpdate(int reason) throws RetryException {
 
-		String setting; // dawn,day,dusk,night
-		String imageURL;
+		String setting = ""; // dawn,day,dusk,night
+		String imageURL = "";
 		
 		
 		Calendar today = Calendar.getInstance();
