@@ -1,12 +1,5 @@
 package com.dunrite.now;
 
-import java.io.File;
-import java.io.InputStream;
-
-import com.bumptech.glide.Glide;
-
-import java.net.URL;
-
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.app.WallpaperManager;
@@ -25,6 +18,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
 
 public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 	private static String[] mDataset;
@@ -51,6 +50,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
 			mImageView.setOnLongClickListener(this);
             container = (CardView) v.findViewById(R.id.card_view);
 		}
+
 
 		@Override
 		public void onClick(View v) {
@@ -172,9 +172,9 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.ViewHolder> {
         // If the bound view wasn't previously displayed on screen, it's animated
         if (position > lastPosition){
             Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
-            viewToAnimate.startAnimation(animation);
-            lastPosition = position;
-        }
+			viewToAnimate.startAnimation(animation);
+			lastPosition = position;
+		}
     }
 	// Return the size of your dataset (invoked by the layout manager)
 	@Override
