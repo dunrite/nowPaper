@@ -1,8 +1,5 @@
 package com.dunrite.now;
 
-import com.google.android.apps.muzei.api.MuzeiArtSource;
-import com.google.android.apps.muzei.api.internal.ProtocolConstants;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +8,9 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import com.google.android.apps.muzei.api.MuzeiArtSource;
+import com.google.android.apps.muzei.api.internal.ProtocolConstants;
 
 public class SettingsActivity extends AppCompatActivity{
     private static Context context;

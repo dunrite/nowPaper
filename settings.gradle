@@ -1,1 +1,1 @@
-include ':nowPaperCV', ':wear'
+include ':app', ':wear'
